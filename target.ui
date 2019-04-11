@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Target</class>
+ <widget class="QWidget" name="Target">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>618</width>
+    <height>482</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Test</string>
+  </property>
+  <widget class="QLabel" name="label_bleue">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>351</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Le test commencera après avoir appuyer sur la cible Bleue.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>20</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <italic>false</italic>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>nombre de cibles restantes :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_nb_restant">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>20</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>10</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>561</width>
+     <height>341</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_rouge">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>400</y>
+     <width>321</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Cliquez sur les cibles qui apparaissent en rouge.</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_retour">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>430</y>
+     <width>191</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Retour</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_resultats">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>430</y>
+     <width>351</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Résultats</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
