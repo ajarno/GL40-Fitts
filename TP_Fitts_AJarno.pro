@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = TP_Fitts_AJarno
 TEMPLATE = app
@@ -30,18 +30,23 @@ SOURCES += \
     target.cpp \
     diskbutton.cpp \
     randombutton.cpp \
-    beginbutton.cpp
+    beginbutton.cpp \
+    qcustomplot.cpp \
+    result.cpp
 
 HEADERS += \
         mainwindow.h \
     target.h \
     diskbutton.h \
     randombutton.h \
-    beginbutton.h
+    beginbutton.h \
+    qcustomplot.h \
+    result.h
 
 FORMS += \
         mainwindow.ui \
-    target.ui
+    target.ui \
+    result.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

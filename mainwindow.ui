@@ -2,18 +2,24 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>601</width>
-    <height>493</height>
+    <width>598</width>
+    <height>505</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <widget class="QLabel" name="label_titre">
     <property name="geometry">
      <rect>
@@ -267,10 +273,10 @@
    <widget class="QPushButton" name="pushButton_quitter">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>400</y>
+      <x>100</x>
+      <y>410</y>
       <width>93</width>
-      <height>28</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -280,10 +286,10 @@
    <widget class="QPushButton" name="pushButton_demarrer">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>340</x>
       <y>400</y>
-      <width>93</width>
-      <height>28</height>
+      <width>181</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
@@ -299,12 +305,15 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>601</width>
+     <width>598</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -312,9 +321,22 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>doubleSpinBox_a</tabstop>
+  <tabstop>doubleSpinBox_b</tabstop>
+  <tabstop>spinBox_nb</tabstop>
+  <tabstop>spinBox_taille_min</tabstop>
+  <tabstop>spinBox_taille_max</tabstop>
+  <tabstop>pushButton_demarrer</tabstop>
+  <tabstop>pushButton_quitter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

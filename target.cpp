@@ -1,12 +1,14 @@
 #include "target.h"
 #include "ui_target.h"
 
-Target::Target(QWidget *parent, int _nb_cibles, int _t_min, int _t_max) :
+Target::Target(QWidget *parent, int _nb_cibles, int _t_min, int _t_max, float _a, float _b) :
     QWidget(parent),
     ui(new Ui::Target),
     nb_cibles(_nb_cibles),
     t_min(_t_min),
-    t_max(_t_max)
+    t_max(_t_max),
+    a(_a),
+    b(_b)
 {
     ui->setupUi(this);
 
@@ -17,6 +19,8 @@ Target::Target(QWidget *parent, int _nb_cibles, int _t_min, int _t_max) :
 
     randomButton = new RandomButton(ui->graphicsView, t_max, t_min);
     randomButton->hide();
+
+    initAll();
 }
 
 Target::~Target()
@@ -31,7 +35,9 @@ void Target::on_pushButton_retour_clicked()
 
 void Target::on_pushButton_resultats_clicked()
 {
-
+    this->close();
+    result = new Result(nullptr,sizes,distances,times,a,b);
+    result->show();
 }
 
 void Target::beginTest()
@@ -39,6 +45,9 @@ void Target::beginTest()
     randomButton->show();
     connect(randomButton, SIGNAL(clicked()), this, SLOT(updateTest()));
     beginButton->close();
+
+    time->start();
+    distances->append(computeDistance());
 }
 
 void Target::updateTest()
@@ -50,5 +59,50 @@ void Target::updateTest()
 
     } else {
         randomButton->close();
+        ui->pushButton_resultats->setEnabled(true);
+        ui->pushButton_resultats->setStyleSheet("QPushButton {background-color: red; font-weight: bold; color: white}");
     }
+
+    saveData();
+}
+
+double Target::computeDistance() {
+    int xCible, yCible, xCurseur, YCurseur;
+    double distance;
+
+    xCible = randomButton->pos().x();
+    yCible = randomButton->pos().y();
+
+    xCurseur = this->cursor().pos().x();
+    YCurseur = this->cursor().pos().y();
+
+    distance = sqrt(pow(xCurseur - xCible,2)+pow(YCurseur - yCible,2));
+
+    return distance;
+}
+
+void Target::initAll() {
+    //Mes initialisations
+    setMouseTracking(true);
+    time = new QTime();
+    times = new QVector<double>();
+    distances = new QVector<double>();
+    sizes = new QVector<double>();
+}
+
+void Target::saveData() {
+    //----------------Temps---------------// OK
+    //On récupère le temps
+    times->append(time->elapsed());
+    //ui->label_2->setNum(times->last());
+    //On restart le timer
+    time->restart();
+
+    //----------------Taille---------------//
+    sizes->append(randomButton->getSize());
+    //ui->label_3->setNum(sizes->last());
+
+    //----------------Distance---------------//
+    distances->append(computeDistance());
+    //ui->label_4->setNum(distances->last());
 }

@@ -11,6 +11,7 @@ public:
     ~RandomButton();
     void updateMe();
 
+
 private:
     int t_max, t_min, height_parent, width_parent;
     int generateRand(int min, int max);
