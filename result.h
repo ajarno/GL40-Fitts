@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <algorithm>
+#include <QPen>
 #include <qcustomplot.h>
 
 namespace Ui {
@@ -25,11 +26,13 @@ private:
     QCustomPlot *customPlot;
     QVector<double> *times;
     void drawPlot(QVector<double> *sizes, QVector<double> *distances, float a, float b);
+    void fillLabels();
     double standardDeviation();
     double meanDifference();
     double confidenceRange();
     double standardError();
-    double fittsLaw(QVector<double> *distances, QVector<double> sizes, double a, double b);
+    double mean();
+    QVector<double> *fittsLaw(QVector<double> *distances, QVector<double> *sizes, double a, double b);
     double getMin(QVector<double> *vector);
     double getMax(QVector<double> *vector);
 

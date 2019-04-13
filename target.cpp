@@ -82,7 +82,6 @@ double Target::computeDistance() {
 }
 
 void Target::initAll() {
-    //Mes initialisations
     setMouseTracking(true);
     time = new QTime();
     times = new QVector<double>();
@@ -91,18 +90,10 @@ void Target::initAll() {
 }
 
 void Target::saveData() {
-    //----------------Temps---------------// OK
-    //On récupère le temps
     times->append(time->elapsed());
-    //ui->label_2->setNum(times->last());
-    //On restart le timer
     time->restart();
 
-    //----------------Taille---------------//
     sizes->append(randomButton->getSize());
-    //ui->label_3->setNum(sizes->last());
 
-    //----------------Distance---------------//
     distances->append(computeDistance());
-    //ui->label_4->setNum(distances->last());
 }

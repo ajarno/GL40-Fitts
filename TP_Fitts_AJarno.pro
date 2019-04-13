@@ -28,10 +28,10 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     target.cpp \
-    diskbutton.cpp \
-    randombutton.cpp \
     beginbutton.cpp \
+    diskbutton.cpp \
     qcustomplot.cpp \
+    randombutton.cpp \
     result.cpp
 
 HEADERS += \
